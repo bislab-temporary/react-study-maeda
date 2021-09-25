@@ -1,9 +1,9 @@
-const $counter = document.getElementById('counter');
-const $up = document.getElementById('count-up');
-const $down = document.getElementById('count-down');
-const $tenUp = document.getElementById('ten-up');
-const $tenDown = document.getElementById('ten-down');
-const $reset = document.getElementById('reset');
+const $counter = document.getElementById('counter'); 
+const $up = document.getElementById('count-up'); 
+const $down = document.getElementById('count-down'); 
+const $tenUp = document.getElementById('ten-up'); 
+const $tenDown = document.getElementById('ten-down'); 
+const $reset= document.getElementById('reset'); 
 let count = 0;
 
 $up.addEventListener('click', function () {

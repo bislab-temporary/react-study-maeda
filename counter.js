@@ -3,6 +3,7 @@ const $up = document.getElementById('count-up');
 const $down = document.getElementById('count-down'); 
 const $tenUp = document.getElementById('ten-up'); 
 const $tenDown = document.getElementById('ten-down'); 
+const $reset = document.getElementById('reset'); 
 let count = 0;
 
 $up.addEventListener('click', function () {
@@ -22,5 +23,10 @@ $down.addEventListener('click', function () {
 
 $tenDown.addEventListener('click', function () {
   count = count - 10;
+  counter.innerHTML = count;
+});
+
+$reset.addEventListener('click', function () {
+  count = 0;
   counter.innerHTML = count;
 });

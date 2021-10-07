@@ -1,32 +1,36 @@
-const $counter = document.getElementById('counter'); 
-const $up = document.getElementById('count-up'); 
-const $down = document.getElementById('count-down'); 
-const $tenUp = document.getElementById('ten-up'); 
-const $tenDown = document.getElementById('ten-down'); 
-const $reset = document.getElementById('reset'); 
+const counter = document.getElementById('counter'); 
+const up = document.getElementById('countUp'); 
+const down = document.getElementById('countDown'); 
+const tenUp = document.getElementById('tenUp'); 
+const tenDown = document.getElementById('tenDown'); 
+const reset = document.getElementById('reset'); 
 let count = 0;
+const stringArea = document.getElementById('stringArea');
 
-$up.addEventListener('click', function () {
-  count = count + 1;
-  counter.innerHTML = count;
-});
+const isShowMessage = () => {
+  return count === 0;
+}
 
-$tenUp.addEventListener('click', function () {
-  count = count + 10;
-  counter.innerHTML = count;
-});
+const showMessage = () => {
+  stringArea.innerText = "0なんですけど";
+};
 
-$down.addEventListener('click', function () {
-  count = count - 1;
-  counter.innerHTML = count;
-});
+const hideMessage = () => {
+stringArea.innerText = "";
+};
 
-$tenDown.addEventListener('click', function () {
-  count = count - 10;
-  counter.innerHTML = count;
-});
+const updateCounter = (num) => {
+  count = count + num;
+  counter.innerText = count;
+  if(isShowMessage()){
+    showMessage();
+  }else{
+    hideMessage();
+  };
+}
 
-$reset.addEventListener('click', function () {
-  count = 0;
-  counter.innerHTML = count;
-});
+up.addEventListener('click', () => updateCounter(1));
+tenUp.addEventListener('click', () => updateCounter(10));
+down.addEventListener('click', () => updateCounter(-1));
+tenDown.addEventListener('click', () => updateCounter(-10));
+reset.addEventListener('click', () => updateCounter(-count)); 
